@@ -7,16 +7,39 @@ import { EmpleadoHijoCComponent } from './empleado-hijo-c/empleado-hijo-c.compon
 import { CaracteristicasEmpleadoCComponent } from './caracteristicas-empleado-c/caracteristicas-empleado-c.component';
 import { ServicioEmpleadosService } from './servicio-empleados.service';
 import { EmpleadosService } from './empleados.service';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { ProyectosComponentComponent } from './proyectos-component/proyectos-component.component';
+import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
+import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
+import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+
+const appRoutes:Routes=[
+  {path:'',component:HomeComponentComponent},
+  {path:'proyectos',component:ProyectosComponentComponent},
+  {path:'quienes',component:QuienesComponentComponent},
+  {path:'contacto',component:ContactoComponentComponent},
+  {path:'actualiza/:id',component:ActualizaComponentComponent},
+  {path:'**',component:ErrorPersonalizadoComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadoHijoCComponent,
-    CaracteristicasEmpleadoCComponent
+    CaracteristicasEmpleadoCComponent,
+    HomeComponentComponent,
+    ProyectosComponentComponent,
+    QuienesComponentComponent,
+    ContactoComponentComponent,
+    ActualizaComponentComponent,
+    ErrorPersonalizadoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServicioEmpleadosService,EmpleadosService],
   bootstrap: [AppComponent]

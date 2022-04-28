@@ -2,7 +2,15 @@
     <div class="row">
         <div clas="col">
             <div >
-               {{xHijo+1}} {{iHijo.nombre}} {{iHijo.apellidos}} {{iHijo.cargo}} {{iHijo.salario}}
+                {{xHijo+1}} {{iHijo.nombre}} {{iHijo.apellidos}} {{iHijo.cargo}} {{iHijo.salario}}
+                &nbsp;
+                <a [routerLink]="['/actualiza',xHijo]" [queryParams]="{accion:'1'}"> 
+                   Actualizar
+                </a>
+                &nbsp;&nbsp;
+                <a [routerLink]="['/actualiza',xHijo]" [queryParams]="{accion:'2'}"> 
+                    Eliminar
+                 </a>
             </div>
             <app-caracteristicas-empleado-c (newItemEvent)="addItem($event)"></app-caracteristicas-empleado-c>
             <ul style="list-style: none;">

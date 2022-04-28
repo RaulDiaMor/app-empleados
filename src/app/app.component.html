@@ -1,35 +1,18 @@
 
-<div class="container">
-    <div class="col"><p>{{titulo}}</p></div>
-    <br><br>
-    <form class="form-group row">
-        <div class="form-group col-md-3">
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
-        </div>
-        <div class="form-group col-md-3">
-            <label for="nombre">Apellido: </label>
-            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="cuadroApellido">
-        </div>
-        <div class="form-group col-md-3">
-            <label for="nombre">Cargo: </label>
-            <input type="text" name="cargo" id="cargo" placeholder="Cargo" class="form-control" [(ngModel)]="cuadroCargo">
-        </div>
-        <div class="form-group col-md-3">
-            <label for="nombre">Salario: </label>
-            <input type="text" name="salario" id="salario" placeholder="Salario" class="form-control" [(ngModel)]="cuadroSalario">
-        </div>
-        <div class="form-group col-md-3"></div>
-        <div class="form-group col-md-3"></div>
-        <div class="form-group col-md-3"></div>
-        <div class="form-group col-md-1"></div>
-        <div class="form-group col-md-1">
-                 <button type="submit" class="btn btn-primary"(click)="agregarEmpleado()" style="margin-top: 35px;">Agregar</button>
-        </div>
-        <div class="form-group col-md-1">
-                 <button type="reset" class="btn btn-primary" style="margin-top: 35px;">Limpiar</button>
-        </div>
-    </form>
-</div>
-<br><br><br><br>
-<app-empleado-hijo-c *ngFor="let i of empleados; let x=index" [iHijo]="i" [xHijo]="x"></app-empleado-hijo-c>
+<nav class="navbar navbar-expand-sm bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/proyectos">Proyectos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/quienes">Quienes Somos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contacto">Contacto</a>
+      </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
